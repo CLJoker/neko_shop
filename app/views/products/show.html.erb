@@ -1,0 +1,11 @@
+<h1>Products</h1>
+
+<p><%= @product.title %> | <%= number_to_currency @product.price %></p>
+
+<%= image_tag(@product.image.url) %>
+<div id="links">
+  <p><%= link_to "Edit", edit_product_path(@product), remote: true %> |
+  <%= link_to "Delete", product_path(@product),
+                           :data => {:confirm => "Are you sure?",
+                                          :method => "delete"} %></p>
+</div>
